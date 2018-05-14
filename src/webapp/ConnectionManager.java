@@ -1,22 +1,23 @@
 package webapp;
 
 /**
- * Created by AnaBelÃ©n on 24/01/2017.
+ * Created by AnaBelén on 24/01/2017.
  */
 import java.sql.*;
-import java.util.*;
 
 public class ConnectionManager {
     static Connection con;
     static String url;
-    public static Connection getConnection() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-      //  String url = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Products;integratedSecurity=true";
-        String url = "jdbc:derby:/localhost:1527/dbderbynet;create=true";
+    static String username;
+    static String password;
+    public static Connection getConnection() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+    	String username = ("usersql");
+    	String password = ("sql1234");
+    	String url = "jdbc:derby://localhost:1527/C:/Users/AnaBelén/dbderbynet;create=true";
         Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
-        // assuming "DataSource" is your DataSource name Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+        
         try {
-            con = DriverManager.getConnection(url);
-            // assuming your SQL Server's username is "username" // and password is "password"
+            con = DriverManager.getConnection(url, username, password);
         }catch (SQLException ex) {
             ex.printStackTrace();
         }

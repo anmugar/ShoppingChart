@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link href="/webapp/css/about.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>About</title>
+</head>
+<body>
+	<ul>
+	<li><a href="main.jsp">Products</a></li>
+	<li><a data-toggle="modal" data-target="#modalAdd">New product</a></li>
+	<li><a href="about.html">About</a></li>
+	<li style="float:right"><a class="active" href="LogoutServlet">Logout</a></li>
+</ul>
+	
+<div class="container">
+<header>
+  <h1><b>Web Application Technologies Project</b></h1>
+</header>
+
+<article class="article">
+  <h4>This is a project for the subject Web Application Technologies done in the AGH University.</h4>
+  <p>The <b>funcionalities</b> of the web are providing a list of products from a database for each user. 
+  <p>The username is stored in a database where the information of the user is get for checking if the login is correct. Also a new users can be registered into the system, whose information will be stored as well.</p>
+  <p>The products are associated to each user and each user can view, add, edit or delete products in the main panel.</p>
+</article>
+
+<footer><h5>Ana Belen Munuera Garcia</h5></footer>
+</div>
+  	
+<!--  -->
+<div class="modal fade" id="modalAdd" >
+ 
+    <div class="modal-dialog">
+		<form action="NewProduct">
+      	<!-- Modal content-->
+      	<div class="modal-content">
+        	<div class="modal-header">
+          	<!--  <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+          	<h4 class="modal-title">New Product</h4>
+        	</div>
+        	<div class="modal-body">
+          	<table class="table">
+    			<thead>
+      				<tr>
+        			<th>Name</th>
+        			<th>Description</th>
+        			<th>Price</th>
+      				</tr>
+    			</thead>
+    		<tbody>
+      			<tr>
+      			
+        		<td><input type="text" class="form-control" name="productName"></td>
+        		<td><input type="text" class="form-control" name="productDescription"></td>
+        		<td><input type="text" class="form-control" name="productPrice"></td>
+      			</tr>
+    		</tbody>
+  			</table>
+        	</div>
+        	<div class="modal-footer">
+          		<button type="submit" class="btn btn-default" >Add</button>
+        	</div>
+      	</div>
+      	</form>
+    </div>
+</div>
+<!--  -->
+</body>
+</html>

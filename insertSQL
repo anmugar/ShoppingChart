@@ -1,0 +1,13 @@
+create table users (UserID int primary key auto_increment not null, username varchar(32), password varchar(32));
+insert into users values (1,'student', 'student');
+insert into users values (2,'anabelen', 'wat2017');
+
+
+create table products (ProductID int primary key auto_increment not null, UserID int, productName varchar(255), productDescription varchar (255), productPrice decimal(5,2));
+insert into products values (1,1,'Notebook', 'Classic notebook for making notes', 10.00);
+insert into products values (2,2,'Agenda', 'Agenda for academic year 2017/2018', 15.00);
+insert into products values (3,2,'Pencil', 'Staedler pencil HB', 2.00);
+insert into products values (4,2,'Pen', 'Blue Pilot pen',3.00);
+
+select * from users;
+select * from products;

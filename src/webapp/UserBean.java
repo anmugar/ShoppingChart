@@ -1,11 +1,12 @@
 package webapp;
 
 /**
- * Created by AnaBelÃ©n on 24/01/2017.
+ * Created by AnaBelén on 24/01/2017.
  */
 public class UserBean {
     private String username;
     private String password;
+    private int userId;
     public boolean valid;
 
     public String getPassword() {
@@ -19,6 +20,12 @@ public class UserBean {
     }
     public void setUserName(String newUsername) {
         username = newUsername;
+    }
+    public int getId() {
+        return userId;
+    }
+    public void setId(int newId) {
+        userId = newId;
     }
     public boolean isValid() {
         return valid;

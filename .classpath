@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="products/|webapp/products/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/webapp/products"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/AnaBelén/Documents/Archivos de instalación/apache-tomcat-8.5.8/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AnaBelén/Documents/Archivos de instalación/db-derby-10.13.1.1-bin/lib/derbynet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AnaBelén/Documents/Archivos de instalación/db-derby-10.13.1.1-bin/lib/derbyclient.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

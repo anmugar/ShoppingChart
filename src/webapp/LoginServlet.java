@@ -1,7 +1,7 @@
 package webapp;
 
 /**
- * Created by AnaBelÃ©n on 24/01/2017.
+ * Created by AnaBelén on 24/01/2017.
  */
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 /** * Servlet implementation class LoginServlet */
 
+@SuppressWarnings("serial")
 public class LoginServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException {
         try {
             UserBean user = new UserBean();
             user.setUserName(request.getParameter("username"));
@@ -20,9 +21,9 @@ public class LoginServlet extends HttpServlet {
             if (user.isValid()) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser",user);
-                response.sendRedirect("CorrectLogin.jsp");//logged-in page
+                response.sendRedirect("main.jsp");//logged-in page
             }
-            else response.sendRedirect("ErrorLogin.jsp"); //error page
+            else response.sendRedirect("errorlogin.html"); //error page
         } catch (Throwable theException) {
             System.out.println(theException);
             }

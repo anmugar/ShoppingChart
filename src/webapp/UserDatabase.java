@@ -1,10 +1,5 @@
 package webapp;
 
-/**
- * Created by AnaBelén on 24/01/2017.
- */
-import java.text.*;
-import java.util.*;
 import java.sql.*;
 
 public class UserDatabase {
@@ -34,7 +29,10 @@ public class UserDatabase {
             } //if user exists set the isValid variable to true
             else
                 if (more) {
-                    System.out.println("Welcome " + user);
+                	int userId = rs.getInt("UserID"); 
+                    System.out.println("Welcome " + user + " whose ID is "+userId);
+                    
+                    bean.setId(userId);
                     bean.setValid(true);
             }
         }
@@ -66,4 +64,48 @@ public class UserDatabase {
         }
         return bean;
     }
+    
+    public static boolean signup(UserBean bean) {
+    	
+    	boolean more=true;
+        Statement stmt = null;
+        String user = bean.getUsername();
+        String query = "select * from Users where username='"+user+"'";
+
+        try { //connect to DB
+            currentCon = ConnectionManager.getConnection();
+            stmt = currentCon.createStatement();
+            rs = stmt.executeQuery(query);
+            more = rs.next(); // if user does not exist set the isValid variable to false
+        }
+        catch (Exception ex) {
+            System.out.println("Log In failed: An Exception has occurred! " + ex);
+        }
+        finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                }
+                catch (Exception e) {}
+                rs = null;
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                }
+                catch (Exception e) {}
+                stmt = null;
+            }
+            if (currentCon != null) {
+                try {
+                    currentCon.close();
+                }
+                catch (Exception e) { }
+                currentCon = null;
+            }
+        }  
+        return more;
+    }	
+    
+    
 }
